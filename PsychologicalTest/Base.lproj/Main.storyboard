@@ -1,24 +1,193 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v1s-nX-BwP">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--人格障礙心理測驗-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="PsychologicalTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeh-Uy-tvW">
+                                <rect key="frame" x="20" y="239" width="374" height="418"/>
+                                <string key="text">每個人一生下來就不是十全十美的，總是會有一些人格障礙的存在，可是你容易有怎樣的人格障礙呢？  做個測驗，幫你找到答案，也提供一些簡易的排除方法。也許你的症狀只是輕微不嚴重，但適時做排除，也可以讓自我的心理更健康。  如果真的很嚴重，還是必須請教專業的心理醫生做長期追蹤治療。</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uux-mt-MjF">
+                                <rect key="frame" x="129.5" y="717" width="155" height="60"/>
+                                <color key="backgroundColor" red="0.23618233199999999" green="0.30519989130000003" blue="0.3411823511" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="1fa-pj-S5a"/>
+                                    <constraint firstAttribute="width" constant="155" id="zBD-w5-P6U"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <segue destination="esJ-UK-PSu" kind="show" id="Ca8-3S-WYJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uux-mt-MjF" firstAttribute="top" secondItem="eeh-Uy-tvW" secondAttribute="bottom" constant="60" id="E6Q-sb-A7J"/>
+                            <constraint firstItem="uux-mt-MjF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ri5-DE-rGP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eeh-Uy-tvW" secondAttribute="trailing" id="Wyi-1H-P7u"/>
+                            <constraint firstItem="eeh-Uy-tvW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lp7-2T-EHM"/>
+                            <constraint firstItem="eeh-Uy-tvW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="yT4-3m-whl"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="人格障礙心理測驗" id="rzG-9n-ifC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="764" y="94"/>
+        </scene>
+        <!--問題-->
+        <scene sceneID="syu-mH-VEm">
+            <objects>
+                <viewController id="esJ-UK-PSu" customClass="QuestionViewController" customModule="PsychologicalTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h1j-Ue-Ofh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="你平常的作息是否十分不正常？" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBp-Ex-gds">
+                                <rect key="frame" x="20" y="141" width="374" height="230"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="3" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zr6-DF-F26">
+                                <rect key="frame" x="0.0" y="569" width="414" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" title="不是很正常，早上需要鬧鐘叫醒"/>
+                                <connections>
+                                    <action selector="aswerChoiceButton:" destination="esJ-UK-PSu" eventType="touchUpInside" id="Dgk-fa-TQ0"/>
+                                    <segue destination="jci-Mo-DeE" kind="show" destinationCreationSelector="showResultSegue:sender:segueIdentifier:" id="qTs-JG-y03"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="5" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtS-v4-fxU">
+                                <rect key="frame" x="0.0" y="701" width="414" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" title="非常不正常，睡覺時間常常顛倒"/>
+                                <connections>
+                                    <action selector="aswerChoiceButton:" destination="esJ-UK-PSu" eventType="touchUpInside" id="zSj-J9-je8"/>
+                                    <segue destination="jci-Mo-DeE" kind="show" destinationCreationSelector="showResultSegue:sender:segueIdentifier:" id="ZI3-sJ-gce"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="1" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Hn-r9-ad0">
+                                <rect key="frame" x="0.0" y="434" width="414" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" title="很正常，因為工作或上課的關係"/>
+                                <connections>
+                                    <action selector="aswerChoiceButton:" destination="esJ-UK-PSu" eventType="touchUpInside" id="vV2-wl-34R"/>
+                                    <segue destination="jci-Mo-DeE" kind="show" destinationCreationSelector="showResultSegue:sender:segueIdentifier:" id="haK-Bl-hB0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qpv-2o-FXX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="問題" id="HRd-eG-1V0"/>
+                    <connections>
+                        <outlet property="questionLabel" destination="MBp-Ex-gds" id="G8I-17-ODT"/>
+                        <outletCollection property="answerButtons" destination="7Hn-r9-ad0" collectionClass="NSMutableArray" id="zhI-OK-rKv"/>
+                        <outletCollection property="answerButtons" destination="Zr6-DF-F26" collectionClass="NSMutableArray" id="hyl-c9-YyJ"/>
+                        <outletCollection property="answerButtons" destination="wtS-v4-fxU" collectionClass="NSMutableArray" id="F81-8Z-ONZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DCM-Pm-gVi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1434.7826086956522" y="93.75"/>
+        </scene>
+        <!--結果-->
+        <scene sceneID="l4D-aH-uJ1">
+            <objects>
+                <viewController id="jci-Mo-DeE" customClass="ResultViewController" customModule="PsychologicalTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zWQ-ii-qf2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="你容易有『反社會人格』" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dh-JE-956">
+                                <rect key="frame" x="20" y="260" width="374" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVk-CX-yNg">
+                                <rect key="frame" x="20" y="340" width="374" height="361"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">反社會人格特質很容易對現狀產生不滿，生活中難免的小摩擦或是不如意都會讓你抱怨連連，彷彿全世界都對不起你一樣。感覺『處處碰壁』的你很容易情緒不穩定，你也很難克制自己一時的衝動，也很難有熱忱長期去從事同一件工作。
+
+建議：當有不如意時，就適時換個環境，轉換並緩合一下起伏的心情。</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yRj-bB-SH8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="結果" id="Cmk-Ki-4jc"/>
+                    <connections>
+                        <outlet property="contentLabel" destination="zVk-CX-yNg" id="dj2-qi-FcL"/>
+                        <outlet property="titleLabel" destination="4dh-JE-956" id="5g7-kA-HxM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2aV-42-wX3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2120" y="94"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="d4L-qt-v8k">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v1s-nX-BwP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hdN-VF-yWV">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2sx-zV-tRu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YVm-S7-dq5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="39" y="94"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZI3-sJ-gce"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
